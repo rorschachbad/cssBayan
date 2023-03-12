@@ -9,10 +9,12 @@ ul {
 
 img {
     width: 100%;
+    border-radius: 20px;
 }
 
 body {
-    background-color: rgba(3, 141, 116, 0.7);
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+    font-size: 24px;
 }
 
 input {
@@ -21,119 +23,94 @@ input {
 
 span {
     position: absolute;
-    right: 0;
+    right: 15px;
+    top: 0;
     font-size: 30px;
     font-weight: bold;
-    color: rgba(17, 200, 216, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     display: none;
 }
 
-.list-item:hover span {
-    color: red;
-    transform: rotate(45deg);
-}
-
-.list:hover span {
-    display: block;
-}
-
 .checkbox:checked ~ span {
-    color: red;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
     transform: rotate(45deg);
 }
 
 .container {
     max-width: 1170px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     padding: 20px 15px;
-    background-color: rgb(5, 54, 97);
+    background-image: linear-gradient(rgba(48, 64, 64, 0.7), rgba(249, 0, 0, 0.7), rgba(79, 68, 68, 0.7));
     border-radius: 20px;
 }
 
 .title {
     margin: 0 0 25px 0;
-    color: rgba(17, 200, 216, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
 }
-.list {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+
+.list-hover-1 {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url('./img/ocean.png');
 }
-.list:hover .list-item{
-    color: rgb(207, 95, 248);
+.list-hover-2 {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("./img/forest.jpg");
 }
+.list-hover-3 {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("./img/mountains.jpg");
+}
+.list-hover-4 {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("./img/space.jpg");
+}
+.list-hover-5 {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("./img/blackhole.jpeg");
+}
+/* background: center / contain no-repeat url("../../media/examples/firefox-logo.svg") */
 
 .checkbox:checked ~ .visible-1 {
     opacity: 1;
     position: static;
+    transform: scale(1, 1);
 }
 .checkbox:checked ~ .visible-2 {
     opacity: 1;
     position: static;
+    transform: scale(1, 1);
 }
 .checkbox:checked ~ .visible-3 {
     opacity: 1;
     position: static;
+    transform: scale(1, 1);
 }
 .checkbox:checked ~ .visible-4 {
     opacity: 1;
     position: static;
+    transform: scale(1, 1);
 }
 .checkbox:checked ~ .visible-5 {
     opacity: 1;
     position: static;
-}
-.list-hover-1:hover > .visible-1 {
-    display: flex;
-    position: static;
-    opacity: 1;
-    transition: 0.5s;
     transform: scale(1, 1);
 }
-.list-hover-1:hover > .visible-1 img{
-    position: static;
+
+.list {
     display: flex;
-    position: static;
-    opacity: 1;
-    transition: 0.5s;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 10px;
+    border-radius: 5px;
 }
-.list-hover-2:hover > .visible-2 {
-    display: flex;
-    position: static;
-    opacity: 1;
-    transition: 0.5s;
-    transform: scale(1, 1);
-}
-.list-hover-3:hover > .visible-3 {
-    display: flex;
-    position: static;
-    opacity: 1;
-    transition: 0.5s;
-    transform: scale(1, 1);
-}
-.list-hover-4:hover > .visible-4 {
-    display: flex;
-    position: static;
-    opacity: 1;
-    transition: 0.5s;
-    transform: scale(1, 1);
-}
-.list-hover-5:hover > .visible-5 {
-    display: flex;
-    position: static;
-    opacity: 1;
-    transition: 1s;
-    transform: scale(1, 1);
-}
+
 .list-item {
     position: relative;
-    cursor: pointer;
-    padding: 20px 5px;
-    border-top: 1px solid rgba(111, 22, 194, 0.2);
-    font-size: 22px;
+    padding: 20px 15px;
+    border-top: 1px solid rgba(14, 4, 6, 0.2);
+    font-size: 24px;
     font-weight: bold;
-    color: rgb(207, 95, 248, 0.5);
+    border-radius: 5px;
+    color: rgb(255, 255, 255, 0.7);
     transition: 1s;
 }
 .list-item-text {
@@ -147,7 +124,86 @@ span {
     justify-content: center;
     max-width: 600px;
     margin: 20px auto;
-    /* transition: 0.5s; */
     z-index: -1;
     transform: scale(0, 0);
 }
+
+@media screen and (min-width: 1080px) and (max-width: 1920px) {
+    .list-item {
+        cursor: pointer;
+    }
+    .list-item:hover span {
+        color: rgb(255, 255, 255);
+        transform: rotate(135deg);
+        transition: 0.5s;
+    }
+    
+    .list:hover span {
+        display: block;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+
+    .list:hover .list-item{
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .list-hover-1:hover {
+    }
+
+    .list-hover-1:hover > .visible-1 {
+        transition: 0.5s;
+        display: flex;
+        position: static;
+        opacity: 1;
+        transition: 0.5s;
+        transform: scale(1, 1);
+    }
+    .list-hover-1:hover > .visible-1 img{
+        position: static;
+        display: flex;
+        opacity: 1;
+        transition: 0.5s;
+    }
+    .list-hover-2:hover > .visible-2 {
+        display: flex;
+        position: static;
+        opacity: 1;
+        transition: 0.5s;
+        transform: scale(1, 1);
+    }
+    .list-hover-3:hover > .visible-3 {
+        display: flex;
+        position: static;
+        opacity: 1;
+        transition: 0.5s;
+        transform: scale(1, 1);
+    }
+    .list-hover-4:hover > .visible-4 {
+        display: flex;
+        position: static;
+        opacity: 1;
+        transition: 0.5s;
+        transform: scale(1, 1);
+    }
+    .list-hover-5:hover > .visible-5 {
+        display: flex;
+        position: static;
+        opacity: 1;
+        transition: 1s;
+        transform: scale(1, 1);
+    }
+ } /* Media query  1080px/1920px */
+
+@media screen and (min-width: 820px) and (max-width: 1179px) {
+    .list-item {
+        font-size: 20px;
+    }
+ } /* Media query 820px/1179px */
+
+ @media screen and (min-width: 320px) and (max-width: 568px) {
+    .list-item {
+        font-size: 16px;
+    }
+ } /* Media query 320px/568px */
